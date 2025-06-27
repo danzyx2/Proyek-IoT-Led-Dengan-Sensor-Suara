@@ -3,6 +3,7 @@
 Tempat di mana cahaya bertemu suara, dan ide-ide IoT berinteraksi dengan dunia nyata.
 Tidak ada yang terlalu rumit di sini... atau mungkin justru terlalu menyenangkan?
 
+---
 
 🔗 **Tujuan Projek Ini**
 
@@ -66,10 +67,29 @@ Tidak ada yang terlalu rumit di sini... atau mungkin justru terlalu menyenangkan
 * **Kabel Jumper**
 * **Catu Daya 5V Eksternal** (Sangat direkomendasikan untuk lebih dari 8-10 LED!)
 
-**⚠️ PERINGATAN PENTING UNTUK POWER LED:**
-Jika LED strip Anda memiliki **lebih dari 8-10 LED**, **sangat penting** untuk menggunakan **catu daya 5V eksternal terpisah** yang cukup kuat untuk LED strip. Jangan pernah memberi daya banyak LED langsung dari pin NodeMCU, karena dapat merusak board! Pastikan **semua GND terhubung bersama** (NodeMCU, LED strip, dan Power Supply LED eksternal).
+---
 
-</details>
+### 🔌 Hubungan Pin-Pin (Wiring Diagram)
+
+Penting untuk menghubungkan setiap komponen dengan benar agar proyek ini dapat berfungsi. Perhatikan diagram koneksi dasar di bawah ini:
+
+* **NodeMCU ESP8266**
+    * **Ke LED Strip WS2812B / NeoPixel:**
+        * **Pin D2 (GPIO 4)** pada NodeMCU $\rightarrow$ Pin **Data In** pada LED Strip.
+        * Pin **GND** pada NodeMCU $\rightarrow$ Pin **GND** pada LED Strip.
+        * Pin **5V (VIN)** pada NodeMCU $\rightarrow$ Pin **5V** pada LED Strip (Lihat **PERINGATAN PENTING UNTUK POWER LED** di bawah!).
+    * **Ke Modul Sensor Suara Digital:**
+        * Pin **D5 (GPIO 14)** pada NodeMCU $\rightarrow$ Pin **DO (Digital Out)** pada Modul Sensor Suara.
+        * Pin **GND** pada NodeMCU $\rightarrow$ Pin **GND** pada Modul Sensor Suara.
+        * Pin **3V3** pada NodeMCU $\rightarrow$ Pin **VCC** pada Modul Sensor Suara (Beberapa sensor suara bisa menggunakan 5V, periksa spesifikasi modul Anda. Namun, 3V3 lebih aman untuk pin ESP8266).
+
+**⚠️ PERINGATAN PENTING UNTUK POWER LED:**
+Jika LED strip Anda memiliki **lebih dari 8-10 LED**, **sangat penting** untuk menggunakan **catu daya 5V eksternal terpisah** yang cukup kuat untuk LED strip. Jangan pernah memberi daya banyak LED langsung dari pin NodeMCU, karena dapat merusak board! Pastikan **semua GND terhubung bersama** (NodeMCU, LED strip, dan Power Supply LED eksternal) untuk menciptakan ground bersama.
+
+* **Contoh Koneksi Power Supply Eksternal untuk LED:**
+    * Pin **5V** dari Power Supply Eksternal $\rightarrow$ Pin **5V** pada LED Strip.
+    * Pin **GND** dari Power Supply Eksternal $\rightarrow$ Pin **GND** pada LED Strip **DAN** Pin **GND** pada NodeMCU.
+    * **JANGAN** hubungkan 5V dari Power Supply LED eksternal ke pin 5V (VIN) NodeMCU jika NodeMCU sudah diberi daya dari USB, kecuali Anda yakin dengan konfigurasi power board Anda. Cukup sambungkan GND dari semua komponen.
 
 ---
 
@@ -131,6 +151,3 @@ Kami sangat terbuka untuk kontribusi! Jika Anda punya ide baru, menemukan *bug*,
 * Buat `Pull Request` jika Anda sudah punya kode yang siap digabungkan.
 
 Mari ciptakan lebih banyak proyek keren bersama!
-
-
-
