@@ -3,13 +3,6 @@
 Tempat di mana cahaya bertemu suara, dan ide-ide IoT berinteraksi dengan dunia nyata.
 Tidak ada yang terlalu rumit di sini... atau mungkin justru terlalu menyenangkan?
 
-<p align="center">
-  <img src="https://via.placeholder.com/600x300?text=Demo+Video+Proyek+Anda" alt="Gambar atau GIF demo proyek LED" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-  <br>
-  <i>(Ganti placeholder ini dengan GIF atau Video singkat proyek Anda!)</i>
-</p>
-
----
 
 🔗 **Tujuan Projek Ini**
 
